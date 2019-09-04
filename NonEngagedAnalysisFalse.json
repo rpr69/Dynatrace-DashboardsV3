@@ -35,8 +35,8 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE03",
-      "query": "select count(userid) as \"Conversions\"  FROM usersession where duration > 180000 and userActionCount < 10 and userid is not null and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Conversions\"  FROM usersession where duration > 180000 and userActionCount < 10 and userid is not null and useraction.name=\"LastStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -85,8 +85,8 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE22",
-      "query": "select count(userid) as \"Abandons\"  FROM usersession where duration > 180000 and userActionCount < 10 and userid is not null and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Abandons\"  FROM usersession where duration > 180000 and userActionCount < 10 and userid is not null and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -119,7 +119,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE34",
-      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\",count(userid) as \"Sessions\" from usersession where duration > 180000 and userActionCount < 10 and userid is not null and useraction.name=\"Step1\"",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\",count(usersessionid) as \"Sessions\" from usersession where duration > 180000 and userActionCount < 10 and userid is not null and useraction.name=\"Step1\"",
       "type": "COLUMN_CHART"
     },
     {

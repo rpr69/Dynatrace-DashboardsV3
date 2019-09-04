@@ -7,7 +7,7 @@
   },
   "id": "c16cb11a-22be-41ab-a336-412369ada313",
   "dashboardMetadata": {
-    "name": "⏱ Duration Analysis",
+    "name": "\u23f1 Duration Analysis",
     "shared": true,
     "owner": "MyEmail",
     "sharingDetails": {
@@ -34,9 +34,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🐢",
+      "customName": "\ud83d\udc22",
       "query": "select count(distinct userSessionId) as \"Conversions\"  FROM usersession where\n\tduration>180000 and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -52,9 +52,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🐇",
+      "customName": "\ud83d\udc07",
       "query": "select count(distinct userSessionId) as \"Conversions\"  FROM usersession where\n\tduration>60000 AND duration<=180000 and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -70,9 +70,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🏇",
+      "customName": "\ud83d\udc0e",
       "query": "select count(distinct userSessionId) as \"Conversions\"  FROM usersession where\n\tduration<=60000 and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -152,9 +152,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🏇",
+      "customName": "\ud83d\udc0e",
       "query": "select count(distinct userSessionId) as \"Abandons\"  FROM usersession where\n\tduration<=60000 and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -170,9 +170,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🐇",
+      "customName": "\ud83d\udc07",
       "query": "select count(distinct userSessionId) as \"Abandons\"  FROM usersession where\n\tduration>60000 AND duration<=180000 and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -188,9 +188,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🐢",
+      "customName": "\ud83d\udc22",
       "query": "select count(distinct userSessionId) as \"Abandons\"  FROM usersession where\n\tduration>180000 and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -254,7 +254,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "⏱",
+      "customName": "\u23f1",
       "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", avg(useraction.duration) as \"Duration\" FROM usersession where useraction.name=\"LastStep\" ",
       "type": "COLUMN_CHART"
     },
@@ -287,7 +287,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "⏱",
+      "customName": "\u23f1",
       "query": "select distinct name, avg(duration) as \"Duration\" from useraction order by Duration DESC",
       "type": "COLUMN_CHART"
     },

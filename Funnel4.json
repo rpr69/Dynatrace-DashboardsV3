@@ -7,7 +7,7 @@
   },
   "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da313",
   "dashboardMetadata": {
-    "name": "🛒 MyFunnel Funnel",
+    "name": "\ud83d\uded2 MyFunnel Funnel",
     "shared": true,
     "owner": "MyEmail",
     "sharingDetails": {
@@ -34,9 +34,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step1",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.name=\"Step1\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader1",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.name=\"Step1\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -52,9 +52,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step4",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name=\"Step3\" and useraction.name=\"Step4\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader4",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name=\"Step3\" and useraction.name=\"Step4\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -70,9 +70,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step1",
-      "query": "select count(userid) as \"Abandons\" from usersession where useraction.name=\"Step1\" and useraction.name!=\"Step2\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader1",
+      "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.name=\"Step1\" and useraction.name!=\"Step2\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -88,9 +88,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step4",
-      "query": "select count(userid) as \"Abandons\" from usersession where useraction.name=\"foo\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader4",
+      "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.name=\"foo\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -198,9 +198,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step4",
+      "customName": "StepHeader4",
       "query": "select sum(usersession.totalErrorCount) as \"Errors\" from useraction where name=\"Step4\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -216,9 +216,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step1",
+      "customName": "StepHeader1",
       "query": "select sum(usersession.totalErrorCount) as \"Errors\" from useraction where name=\"Step1\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -234,9 +234,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step1",
+      "customName": "StepHeader1",
       "query": "select AVG(duration) as \"Duration\" from useraction where name=\"Step1\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -252,9 +252,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step4",
+      "customName": "StepHeader4",
       "query": "select avg(duration) as \"Duration\" from useraction where name=\"Step4\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -286,9 +286,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step2",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader2",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -304,9 +304,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step3",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name=\"Step3\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader3",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name=\"Step3\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -322,9 +322,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step2",
-      "query": "select count(userid) as \"Abandons\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name!=\"Step3\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader2",
+      "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name!=\"Step3\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -340,9 +340,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step3",
-      "query": "select count(userid) as \"Abandons\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name=\"Step3\" and useraction.name!=\"Step4\"",
-      "type": "SINGLE_VALUE"
+      "customName": "StepHeader3",
+      "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.name=\"Step1\" and useraction.name=\"Step2\" and useraction.name=\"Step3\" and useraction.name!=\"Step4\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -358,9 +358,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step2",
+      "customName": "StepHeader2",
       "query": "select AVG(duration) as \"Duration\" from useraction where name=\"Step2\" ",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -376,9 +376,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step3",
+      "customName": "StepHeader3",
       "query": "select AVG(duration) as \"Duration\" from useraction where name=\"Step3\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -394,9 +394,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step2",
+      "customName": "StepHeader2",
       "query": "select sum(usersession.totalErrorCount) as \"Errors\" from useraction where name=\"Step2\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -412,9 +412,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "Step3",
+      "customName": "StepHeader3",
       "query": "select sum(usersession.totalErrorCount) as \"Errors\" from useraction where name=\"Step3\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",

@@ -35,8 +35,8 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE0A",
-      "query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where\n\tuseraction.apdexCategory=\"SATISFIED\" and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where\n\tuserExperienceScore=\"SATISFIED\" and useraction.name=\"LastStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -53,8 +53,8 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE1F",
-      "query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where\n\tuseraction.apdexCategory=\"TOLERATING\" and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where\n\tuserExperienceScore=\"TOLERATED\" and useraction.name=\"LastStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -71,8 +71,8 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE22",
-      "query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where\n\tuseraction.apdexCategory=\"FRUSTRATED\" and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where\n\tuserExperienceScore=\"FRUSTRATED\" and useraction.name=\"LastStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -104,7 +104,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Satisfied](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09useraction.apdexCategory%3D%22SATISFIED%22%20and%20useraction.name%3D%22LastStep%22%20%0A)"
+      "markdown": "## [Satisfied](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20and%20useraction.name%3D%22LastStep%22%20%0A)"
     },
     {
       "name": "Markdown",
@@ -120,7 +120,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Tolerated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09useraction.apdexCategory%3D%22TOLERATING%22%20and%20useraction.name%3D%22LastStep%22%20%0A)"
+      "markdown": "## [Tolerated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20and%20useraction.name%3D%22LastStep%22%20%0A)"
     },
     {
       "name": "Markdown",
@@ -136,7 +136,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Frustrated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09useraction.apdexCategory%3D%22FRUSTRATED%22%20and%20useraction.name%3D%22LastStep%22%20%0A)"
+      "markdown": "## [Frustrated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20and%20useraction.name%3D%22LastStep%22%20%0A)"
     },
     {
       "name": "DTAQL",
@@ -186,7 +186,7 @@
         "managementZone": null
       },
       "customName": "\uD83C\uDFC1",
-      "query": "SELECT useraction.apdexCategory, count(userSessionId) FROM usersession WHERE useraction.name=\"LastStep\" group by useraction.apdexCategory order by count(userSessionId) desc",
+      "query": "SELECT userExperienceScore, count(userSessionId) FROM usersession WHERE useraction.name=\"LastStep\" group by userExperienceScore order by count(userSessionId) desc",
       "type": "PIE_CHART"
     },
     {
@@ -253,7 +253,7 @@
       },
       "customName": "\uD83C\uDFC1",
       "query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where\n\tuseraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",

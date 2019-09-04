@@ -7,7 +7,7 @@
   },
   "id": "934b0dce-bbf4-443d-b0f0-e370faeda313",
   "dashboardMetadata": {
-    "name": "📊 Marketing Overview",
+    "name": "\u2615 Marketing Overview",
     "shared": false,
     "owner": "MyEmail",
     "sharingDetails": {
@@ -36,7 +36,7 @@
       },
       "customName": "Rage Clicks",
       "query": "select sum(numberOfRageClicks) as \"Rage Clicks\" FROM usersession where useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -53,8 +53,8 @@
         "managementZone": null
       },
       "customName": "Satisfied Sessions",
-      "query": "select count(userid) as \"Satisfied Sessions\" from usersession where useraction.apdexCategory=\"SATISFIED\" and useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Satisfied Sessions\" from usersession where userExperienceScore=\"SATISFIED\" and useraction.name=\"PromStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -71,8 +71,8 @@
         "managementZone": null
       },
       "customName": "Tolerated Sessions",
-      "query": "select count(userid) as \"Tolerated Sessions\" from usersession where useraction.apdexCategory=\"TOLERATING\"  and useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Tolerated Sessions\" from usersession where userExperienceScore=\"TOLERATED\"  and useraction.name=\"PromStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -89,8 +89,8 @@
         "managementZone": null
       },
       "customName": "Frustrated Sessions",
-      "query": "select count(userid) as \"Frustrated Sessions\" from usersession where useraction.apdexCategory=\"FRUSTRATED\"  and useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Frustrated Sessions\" from usersession where userExperienceScore=\"FRUSTRATED\"  and useraction.name=\"PromStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -107,8 +107,8 @@
         "managementZone": null
       },
       "customName": "Conversions",
-      "query": "select count(userid) as \"Conversions\" from usersession where useraction.name=\"LastStep\"  and useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Conversions\" from usersession where useraction.name=\"LastStep\"  and useraction.name=\"PromStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -125,8 +125,8 @@
         "managementZone": null
       },
       "customName": "Nonengaged Sessions",
-      "query": "select count(userid) as \"Nonengaged Sessions\" from usersession WHERE duration > 180000 and userActionCount < 10 and useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Nonengaged Sessions\" from usersession WHERE duration > 180000 and userActionCount < 10 and useraction.name=\"PromStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -143,8 +143,8 @@
         "managementZone": null
       },
       "customName": "Abandons",
-      "query": "select count(userid) as \"Abandons\" from usersession where useraction.name!=\"LastStep\"  and useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.name!=\"LastStep\"  and useraction.name=\"PromStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -162,7 +162,7 @@
       },
       "customName": "Duration",
       "query": "select AVG(duration) as \"Duration\" from useraction where useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -180,7 +180,7 @@
       },
       "customName": "Errors",
       "query": "select sum(usersession.totalErrorCount) as \"Errors\" from useraction where useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -261,8 +261,8 @@
         "managementZone": null
       },
       "customName": "Sessions",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.name=\"PromStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.name=\"PromStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     }
   ]
 }

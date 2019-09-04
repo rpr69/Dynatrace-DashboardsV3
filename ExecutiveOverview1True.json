@@ -7,7 +7,7 @@
   },
   "id": "3aa5be20-8833-4af1-a847-2f84cb5da313",
   "dashboardMetadata": {
-    "name": "🕴 Executive Overview",
+    "name": "\ud83d\udd74 Executive Overview",
     "shared": false,
     "owner": "MyEmail",
     "sharingDetails": {
@@ -36,7 +36,7 @@
       },
       "customName": "Revenue",
       "query": "select sum(doubleProperties.revenueproperty) as \"Revenue\" FROM usersession where useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -54,7 +54,7 @@
       },
       "customName": "Lost Revenue",
       "query": "select sum(doubleProperties.revenueproperty) as \"Lost Revenue\" FROM usersession where useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -72,7 +72,7 @@
       },
       "customName": "Rage Clicks",
       "query": "select sum(numberOfRageClicks) as \"Rage Clicks\" FROM usersession ",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -89,8 +89,8 @@
         "managementZone": null
       },
       "customName": "Satisfied Users",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.apdexCategory=\"SATISFIED\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where userExperienceScore=\"SATISFIED\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -107,8 +107,8 @@
         "managementZone": null
       },
       "customName": "Tolerated Users",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.apdexCategory=\"TOLERATING\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where userExperienceScore=\"TOLERATED\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -125,8 +125,8 @@
         "managementZone": null
       },
       "customName": "Frustrated Users",
-      "query": "select count(userid) as \"Sessions\" from usersession where useraction.apdexCategory=\"FRUSTRATED\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where userExperienceScore=\"FRUSTRATED\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -143,8 +143,8 @@
         "managementZone": null
       },
       "customName": "Risk Revenue",
-      "query": "select sum(doubleProperties.revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.name = \"LastStep\" and (useraction.apdexCategory =\"TOLERATING\" or useraction.apdexCategory =\"FRUSTRATED\" or useraction.apdexCategory =\"UNDEFINED\")",
-      "type": "SINGLE_VALUE"
+      "query": "select sum(doubleProperties.revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.name = \"LastStep\" and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -161,8 +161,8 @@
         "managementZone": null
       },
       "customName": "Conversions",
-      "query": "select count(userid) as \"Conversions\" from usersession where useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Conversions\" from usersession where useraction.name=\"LastStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -179,8 +179,8 @@
         "managementZone": null
       },
       "customName": "Nonengaged Sessions",
-      "query": "select count(userid) as \"Nonengaged Sessions\" from usersession WHERE duration > 30000 and userActionCount < 20",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Nonengaged Sessions\" from usersession WHERE duration > 30000 and userActionCount < 20",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -197,8 +197,8 @@
         "managementZone": null
       },
       "customName": "Abandons",
-      "query": "select count(userid) as \"Abandons\" from usersession where useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.name!=\"LastStep\"",
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -216,7 +216,7 @@
       },
       "customName": "Duration",
       "query": "select AVG(duration) as \"Duration\" from useraction",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -234,7 +234,7 @@
       },
       "customName": "Errors",
       "query": "select sum(usersession.totalErrorCount) as \"Errors\" from useraction",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -252,7 +252,7 @@
       },
       "customName": "New User Revenue",
       "query": "select sum(doubleProperties.revenueproperty) as \"New User Revenue\" FROM usersession where useraction.name=\"LastStep\" and newUser IS true",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -270,7 +270,7 @@
       },
       "customName": "Promotional User Revenue",
       "query": "select sum(doubleProperties.revenueproperty) as \"Promotional User Revenue\" FROM usersession where useraction.name=\"LastStep\" and useraction.name=\"Promotion\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",

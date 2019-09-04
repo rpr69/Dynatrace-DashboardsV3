@@ -7,7 +7,7 @@
   },
   "id": "8a487b1b-c491-41f7-adf2-7460165da313",
   "dashboardMetadata": {
-    "name": "🙈 Error Analysis",
+    "name": "\ud83d\ude12 Error Analysis",
     "shared": true,
     "owner": "MyEmail",
     "sharingDetails": {
@@ -34,9 +34,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "😢",
+      "customName": "\ud83d\ude22",
       "query": "select count(distinct userSessionId) as \"Conversions\"  FROM usersession where\n\ttotalErrorCount > 2 and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -52,9 +52,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🙁",
+      "customName": "\ud83d\ude12",
       "query": "select count(distinct userSessionId) as \"Conversions\"  FROM usersession where\n\ttotalErrorCount IN (1,2) and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -70,9 +70,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "😃",
+      "customName": "\ud83d\ude00",
       "query": "select count(distinct userSessionId) as \"Conversions\"  FROM usersession where\n\ttotalErrorCount=0 and useraction.name=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -152,9 +152,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "😃",
+      "customName": "\ud83d\ude00",
       "query": "select count(distinct userSessionId) as \"Abandons\"  FROM usersession where\n\ttotalErrorCount=0 and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "DTAQL",
@@ -170,9 +170,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🙁",
+      "customName": "\ud83d\ude12",
       "query": "select count(distinct userSessionId) as \"Abandons\"  FROM usersession where\n\ttotalErrorCount IN (1,2) and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "User Sessions Query",
@@ -188,9 +188,9 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "😢",
+      "customName": "\ud83d\ude22",
       "query": "select count(distinct userSessionId) as \"Abandons\"  FROM usersession where\n\ttotalErrorCount > 2 and useraction.name=\"Step1\" and useraction.name!=\"LastStep\"",
-      "type": "SINGLE_VALUE"
+      "type": "SINGLE_VALUE", "timeFrameShift": "-2h"
     },
     {
       "name": "Markdown",
@@ -254,7 +254,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🙈",
+      "customName": "\ud83d\ude12",
       "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(totalErrorCount) as \"Errors\" FROM usersession",
       "type": "COLUMN_CHART"
     },
@@ -287,7 +287,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "customName": "🙈",
+      "customName": "\ud83d\ude12",
       "query": "select distinct name, sum(usersession.totalErrorCount) as \"Errors\" from useraction where errorcount>0 order by usersession.totalErrorCount",
       "type": "COLUMN_CHART"
     },
