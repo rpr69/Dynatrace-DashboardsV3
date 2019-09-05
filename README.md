@@ -1,4 +1,4 @@
-# Dynatrace-DashboardsV2
+# Dynatrace-DashboardsV3
 Dynatrace Dashboards (ver 174+)
 
 Prereqs:
