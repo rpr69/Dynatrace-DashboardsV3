@@ -22,4 +22,5 @@ Deployment Steps:
   
  Sample Dashboard Images:
   
+  Marketing Overview
   ![Marketing Overview](Images/MarketingOverview.png)
