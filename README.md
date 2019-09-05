@@ -17,3 +17,5 @@ Deployment Steps:
     D. App NAme (any name you want for your app, spaces fine)<br/>
     E. Session property for revenue (hit return if no revenue)<br/>
     F. Funnel Step 1 - 12 (Enter each funnel step and header name in the correct order. Hit return twice when you have completed the last funnel step)<br/>
+  
+  ![Image](Images/MarketingOverview.png)
