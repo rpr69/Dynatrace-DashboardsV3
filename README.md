@@ -24,3 +24,6 @@ Deployment Steps:
   
   Marketing Overview
   ![Marketing Overview](Images/MarketingOverview.png)
+  
+  Funnel
+  ![Book Travel Funnel](Images/Funnel.png)
