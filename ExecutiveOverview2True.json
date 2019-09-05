@@ -8,7 +8,7 @@
   "id": "21a04cb8-804b-4755-b530-d4c40feda313",
   "dashboardMetadata": {
     "name": "\ud83d\udd74 Executive Overview",
-    "shared": false,
+    "shared": true,
     "owner": "MyEmail",
     "sharingDetails": {
       "linkShared": true,

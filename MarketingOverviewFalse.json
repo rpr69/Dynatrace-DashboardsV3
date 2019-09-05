@@ -8,7 +8,7 @@
   "id": "934b0dce-bbf4-443d-b0f0-e370faeda313",
   "dashboardMetadata": {
     "name": "\u2615 Marketing Overview",
-    "shared": false,
+    "shared": true,
     "owner": "MyEmail",
     "sharingDetails": {
       "linkShared": true,

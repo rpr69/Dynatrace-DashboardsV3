@@ -8,7 +8,7 @@
   "id": "61b041e1-e4e0-4830-938b-a0e93e0f47e3",
   "dashboardMetadata": {
     "name": "Member Analysis",
-    "shared": false,
+    "shared": true,
     "owner": "techshadyjk@ruxitlabs.com",
     "sharingDetails": {
       "linkShared": true,

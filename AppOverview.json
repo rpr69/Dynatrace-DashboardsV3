@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      2
+    ],
+    "clusterVersion": "1.178.0.20190904-174122"
+  },
+  "id": "fbe8d3b1-ccb9-480c-9e5d-0e1b8b3da313",
+  "dashboardMetadata": {
+    "name": "\ud83d\ude80 MyApp Overview",
+    "shared": true,
+    "owner": "MyEmail",
+    "sharingDetails": {
+      "linkShared": true,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS",
+      "managementZone": null
+    }
+  },
+  "tiles": [
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 798,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Rage Clicks",
+      "query": "select sum(numberOfRageClicks) as \"Rage Clicks\" FROM usersession where useraction.application=\"MyApp\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Satisfied Users",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" and userExperienceScore=\"SATISFIED\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 266,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Tolerated Users",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" and userExperienceScore=\"TOLERATED\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 532,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Frustrated Users",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" and userExperienceScore=\"FRUSTRATED\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 798,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Session",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 1064,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Nonengaged Sessions",
+      "query": "select count(usersessionid) as \"Nonengaged Sessions\" from usersession WHERE useraction.application=\"MyApp\" and duration > 180000 and userActionCount < 10",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 798,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Duration",
+      "query": "select AVG(duration) as \"Duration\" from useraction where useraction.application=\"MyApp\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 1064,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Errors",
+      "query": "select sum(usersession.totalErrorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 1064,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Bounces",
+      "query": "select count(usersessionid) as \"Bounces\" from usersession where bounce=true and useraction.application=\"MyApp\"",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "-2h"
+    }
+  ]
+}
