@@ -20,6 +20,10 @@ Deployment Steps:
     E. Session property for revenue (hit return if no revenue)<br/>
     F. Funnel Step 1 - 12 (Enter each funnel step and header name in the correct order. Hit return twice when you have completed the last funnel step)<br/>
   
+ Sample Install Output
+ 
+ ![Shady](Images/Install.png)
+  
  Sample Dashboard Images:
   
   Marketing Overview
